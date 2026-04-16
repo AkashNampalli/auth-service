@@ -1,0 +1,27 @@
+spring:
+  datasource:
+    url: jdbc:postgresql://localhost:5432/authservice_db
+    username: shoptalk
+    password: shoptalk123
+
+  jpa:
+    database-platform: org.hibernate.dialect.PostgreSQLDialect  # ← add this
+    hibernate:
+      ddl-auto: create-drop
+    show-sql: true
+    properties:
+      hibernate:
+        format_sql: true
+
+  data:
+    redis:
+      host: localhost
+      port: 6379
+
+server:
+  port: 8082
+
+jwt:
+  secret: 404E635266556A586E3272357538782F413F4428472B4B6250645367566B5970
+  access-token-expiry: 900000
+  refresh-token-expiry: 604800000
